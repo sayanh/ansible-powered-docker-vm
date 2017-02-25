@@ -5,3 +5,7 @@
   action: apt name=apt-transport-https state=present 
 - name: Install curl
   action: apt name=curl state=present update_cache=yes
+- name: Install nmap
+  apt: package=nmap update_cache=yes
+- name: Install net-tools
+  apt: package=net-tools update_cache=yes
