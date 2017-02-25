@@ -1,0 +1,7 @@
+# tasks file for network-utils
+- name: Raw update cache with fix missing
+  raw: apt update --fix-missing
+- name: Install apt-https transport
+  action: apt name=apt-transport-https state=present 
+- name: Install curl
+  action: apt name=curl state=present update_cache=yes

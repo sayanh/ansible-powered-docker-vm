@@ -1,0 +1,14 @@
+---
+# file: provision.yml
+- hosts: all
+  remote_user: vagrant
+  become: yes
+  become_user: root
+  become_method: sudo
+  gather_facts: yes
+  pre_tasks:
+    - name: 'install python2'
+      raw: sudo apt-get -y install python-simplejson
+  roles:
+    - network-utils
+    - docker
