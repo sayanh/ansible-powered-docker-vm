@@ -1,0 +1,17 @@
+---
+# tasks file for container-example
+- name: Run mysql DB 
+  docker: 
+    name: db
+    image: shazra/mysql
+    state: started 
+- name: Run php app with nginx
+  docker:
+    name: app
+    image: shazra/php-app
+    state: started
+    expose:
+      - 80
+    links:
+      - db:db
+

@@ -1,0 +1,14 @@
+---
+# tasks file for pip-packages
+- name: Install easy_install
+  apt:
+    package: python-setuptools
+    update_cache: yes
+    state: present
+- easy_install:
+    name: pip
+    state: latest
+- pip:
+    name: "{{ item }}"
+  with_items: "{{ pip.packages }}"
+    

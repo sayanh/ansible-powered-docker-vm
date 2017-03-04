@@ -1,0 +1,7 @@
+---
+# defaults file for pip-packages
+pip:
+  packages:
+    - docker-py
+    - jinja2
+    - virtualenv
