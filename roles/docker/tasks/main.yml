@@ -7,4 +7,4 @@
   apt_repository: repo='deb https://apt.dockerproject.org/repo debian-jessie main' state=present
 
 - name: Install Docker package
-  apt: pkg=docker-engine=1.13.0-0~debian-jessie update_cache=yes
+  apt: pkg=docker-engine=1.13.1-0~debian-jessie update_cache=yes
