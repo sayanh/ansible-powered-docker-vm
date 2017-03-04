@@ -3,9 +3,9 @@
   raw: apt update --fix-missing
 - name: Install apt-https transport
   action: apt name=apt-transport-https state=present 
-- name: Install curl
-  action: apt name=curl state=present update_cache=yes
-- name: Install nmap
-  apt: package=nmap update_cache=yes
-- name: Install net-tools
-  apt: package=net-tools update_cache=yes
+- name: Install packages
+  with_items: "{{ network.packages }}"
+  apt:
+    package: "{{ item }}"
+    update_cache: yes
+    state: present

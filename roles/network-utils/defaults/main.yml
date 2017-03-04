@@ -1,2 +1,7 @@
 ---
 # defaults file for network-utils
+network:
+  packages:
+    - curl
+    - nmap
+    - net-tools
